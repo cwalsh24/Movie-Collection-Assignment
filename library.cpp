@@ -13,6 +13,10 @@
 
 using namespace std;
 
+Library::Library(){
+
+}
+
 Library::~Library() {
   //this should empty the list;
   collection.clear();
@@ -47,17 +51,36 @@ void Library::read_from_file(string fileName){
     tempM.year = temp6;
     //insert_sorted(temp1, temp2, temp3);
     collection.push_back(tempM); //remove later  movie &collection
+    getline(in, temp1);
   }
 
   //closes the file stream.
   in.close();
 }
 
-void Library::print(){
+void Library::push_front(string title, string director, int runtime, string format, float price, int year){
+  //declares a movie variable
+  movie tempM;
+  //this code stores all the movie information into the movie struct.
+  tempM.title = title;
+  tempM.director = director;
+  tempM.runtime = runtime;
+  tempM.format = format;
+  tempM.price = price;
+  tempM.year = year;
+  //calls the list push_front method
+  collection.push_front(tempM);
+} 
+
+void Library::print(){ //might want to make this look better and make the decimals not disappear
   //declares an iterator variable to travel through the list
   list<movie>::iterator it;
   for(it = collection.begin(); it != collection.end(); it++){
-    cout << it->title << endl;
-    cout << it->director << endl;
+    cout << "Title: " << it->title << endl;
+    cout << "Director: " << it->director << endl;
+    cout << "Runtime: " << it->runtime << " minutes" << endl;
+    cout << "Format: " << it->format << endl;
+    cout << "Price: $" << it->price << endl;
+    cout << "Year: " << it->year << endl; 
   }
 }
