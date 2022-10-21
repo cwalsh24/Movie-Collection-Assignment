@@ -27,41 +27,34 @@ void Library::read_from_file(string fileName){
   movie tempM;
   //opens up the file stream.
   in.open(fileName.c_str());
-
   //priming read of the movie information
   getline(in, temp1);
-  getline(in, temp2);
-  in >> temp3;
-  in.ignore();
-  getline(in, temp4);
-  in >> temp5 >> temp6; //all this works
-  in.ignore();
+  
   //This loop stores the data from the file into the linked list.
   while(in){
-    //insert_sorted(temp1, temp2, temp3);
-    collection.push_back(tempM); //remove later  movie &collection
-    getline(in, temp1);
     getline(in, temp2);
     in >> temp3;
     in.ignore();
     getline(in, temp4);
     in >> temp5 >> temp6;
-    in.ignore(); //appears to work now
+    in.ignore(); 
 
     tempM.title = temp1;
-    //cout << tempM.title;
     tempM.director = temp2;
     tempM.runtime = temp3;
     tempM.format = temp4;
     tempM.price = temp5;
     tempM.year = temp6;
+    //insert_sorted(temp1, temp2, temp3);
+    collection.push_back(tempM); //remove later  movie &collection
   }
 
   //closes the file stream.
   in.close();
 }
 
-void Library::print(){ //does not seem to work currently
+void Library::print(){
+  //declares an iterator variable to travel through the list
   list<movie>::iterator it;
   for(it = collection.begin(); it != collection.end(); it++){
     cout << it->title << endl;
