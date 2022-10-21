@@ -70,7 +70,21 @@ void Library::push_front(string title, string director, int runtime, string form
   tempM.year = year;
   //calls the list push_front method
   collection.push_front(tempM);
-} 
+}
+
+void Library::push_back(string title, string director, int runtime, string format, float price, int year){
+  //declares a movie variable
+  movie tempM;
+  //this code stores all the movie information into the movie struct.
+  tempM.title = title;
+  tempM.director = director;
+  tempM.runtime = runtime;
+  tempM.format = format;
+  tempM.price = price;
+  tempM.year = year;
+  //calls the list push_back method
+  collection.push_back(tempM);
+}
 
 void Library::print(){ //might want to make this look better and make the decimals not disappear
   //declares an iterator variable to travel through the list

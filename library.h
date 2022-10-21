@@ -30,7 +30,7 @@ class Library{
   ~Library();
   void read_from_file(std::string fileName);
   void push_front(std::string title, std::string director, int runtime, std::string format, float price, int year);
-  //void push_back(std::string title, std::string director, int runtime, std::string format, float price, int year);
+  void push_back(std::string title, std::string director, int runtime, std::string format, float price, int year);
   //void write_to_file(std::string fileName);
   //std::string find_movie(std::string title);
   //std::string director_search(std::string name);
