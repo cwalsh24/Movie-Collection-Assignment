@@ -11,19 +11,19 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
-#include <string>
 #include <list>
+#include "movie.h"
 
 class Library{
  private:
-  struct movie{
+/**struct movie{        //Delete this later
     std::string title;
     std::string director;
     int runtime;
     std::string format;
     float price;
     int year;
-  };
+    };**/ 
   std::list<movie> collection;
  public:
   Library();
