@@ -15,15 +15,7 @@
 #include "movie.h"
 
 class Library{
- private:
-/**struct movie{        //Delete this later
-    std::string title;
-    std::string director;
-    int runtime;
-    std::string format;
-    float price;
-    int year;
-    };**/ 
+ private: 
   std::list<movie> collection;
  public:
   Library();
@@ -32,8 +24,8 @@ class Library{
   void push_front(std::string title, std::string director, int runtime, std::string format, float price, int year);
   void push_back(std::string title, std::string director, int runtime, std::string format, float price, int year);
   void write_to_file(std::string fileName);
-  //std::string find_movie(std::string title);
-  //std::string director_search(std::string name);
+  void find_movie(std::string title);
+  void director_search(std::string name);
   //void insert_sorted(std::string title, std::string director, int runtime, std::string format, float price, int year);
   void print();
   //void remove(std::title);

@@ -101,6 +101,44 @@ void Library::write_to_file(string fileName){
   cout << "Output has been written to " << fileName << endl;
 }
 
+void Library::find_movie(string movieName){ //since this is printing them I think it should be void this time
+  //declares an iterator variable to travel through the list
+  list<movie>::iterator it = collection.begin();
+  //this for loop travels through each node of the list
+  for(it = collection.begin(); it != collection.end(); it++){
+    //this if statement checks to see if the user inputted string
+    //is a substring of the movie title. 
+    if (it->title.find(movieName) != string::npos){
+      //this code prints the movie information. 
+      cout << "Title: " << it->title << endl;
+      cout << "Director: " << it->director << endl;
+      cout << "Runtime: " << it->runtime << " minutes" << endl;
+      cout << "Format: " << it->format << endl;
+      cout << "Price: $" << it->price << endl;
+      cout << "Year: " << it->year << endl;
+    }
+  }
+}
+
+void Library::director_search(string name){
+  //this declares an iterator variable to travel through the list
+  list<movie>::iterator it = collection.begin();
+  //this loop iterates through the linked list
+  for(it = collection.begin(); it != collection.end(); it++){
+    //this if statement checks to see if the user inputted name is equal
+    //to the director name in each movie struct 
+    if (it->director == name){
+      //the following lines print the movie information
+      cout << "Title: " << it->title << endl;
+      cout << "Director: " << it->director << endl;
+      cout << "Runtime: " << it->runtime << " minutes" << endl;
+      cout << "Format: " << it->format << endl;
+      cout << "Price: $" << it->price << endl;
+      cout << "Year: " << it->year << endl;
+    }
+  }
+}
+
 void Library::print(){ //might want to make this look better and make the decimals not disappear
   //declares an iterator variable to travel through the list
   list<movie>::iterator it;
