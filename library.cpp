@@ -86,6 +86,21 @@ void Library::push_back(string title, string director, int runtime, string forma
   collection.push_back(tempM);
 }
 
+void Library::write_to_file(string fileName){
+  //this is the iterator variable used in the loop. 
+  list<movie>::iterator i;
+  ofstream out;
+  //opens the file stream
+  out.open(fileName.c_str());
+  
+  for(i = collection.begin(); i != collection.end(); i++){
+    out << i->title << endl << i->director << endl << i->runtime <<
+      endl << i->format << endl << i->price << endl << i->year << endl;
+  }
+  out.close();
+  cout << "Output has been written to " << fileName << endl;
+}
+
 void Library::print(){ //might want to make this look better and make the decimals not disappear
   //declares an iterator variable to travel through the list
   list<movie>::iterator it;

@@ -1,0 +1,18 @@
+Star Wars
+George Lucas
+105
+VHS
+5.25
+1977
+Full Metal Jacket
+Stanley Kubrick
+116
+VHS
+5.30
+1987
+The Terminator
+James Cameron
+107
+LaserDisc
+10.00
+1984
