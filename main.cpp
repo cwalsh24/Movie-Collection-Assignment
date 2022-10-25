@@ -12,7 +12,9 @@ int main()
   //l.push_back("Something", "Something", 100, "DVD", 10.50, 2004); 
   //l.print();
   //l.find_movie("Star");
-  l.director_search("George Lucas"); 
+  //l.director_search("George Lucas");
+  l.remove("The Terminator");
+  l.print();
 
   return 0;
 }

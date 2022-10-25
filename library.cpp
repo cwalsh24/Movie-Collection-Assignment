@@ -18,7 +18,7 @@ Library::Library(){
 }
 
 Library::~Library() {
-  //this should empty the list;
+  //this should empty the list
   collection.clear();
 }
 
@@ -50,7 +50,7 @@ void Library::read_from_file(string fileName){
     tempM.price = temp5;
     tempM.year = temp6;
     //insert_sorted(temp1, temp2, temp3);
-    collection.push_back(tempM); //remove later  movie &collection
+    collection.push_back(tempM); //remove later
     getline(in, temp1);
   }
 
@@ -92,16 +92,18 @@ void Library::write_to_file(string fileName){
   ofstream out;
   //opens the file stream
   out.open(fileName.c_str());
-  
+  //this loop prints the movie struct information to the file
   for(i = collection.begin(); i != collection.end(); i++){
     out << i->title << endl << i->director << endl << i->runtime <<
       endl << i->format << endl << i->price << endl << i->year << endl;
   }
+  //closes file stream
   out.close();
+  //gives the user a message showing that the file has been written
   cout << "Output has been written to " << fileName << endl;
 }
 
-void Library::find_movie(string movieName){ //since this is printing them I think it should be void this time
+void Library::find_movie(string movieName){ 
   //declares an iterator variable to travel through the list
   list<movie>::iterator it = collection.begin();
   //this for loop travels through each node of the list
@@ -142,6 +144,7 @@ void Library::director_search(string name){
 void Library::print(){ //might want to make this look better and make the decimals not disappear
   //declares an iterator variable to travel through the list
   list<movie>::iterator it;
+  //this loop iterates through the list and prints the movie struct information
   for(it = collection.begin(); it != collection.end(); it++){
     cout << "Title: " << it->title << endl;
     cout << "Director: " << it->director << endl;
@@ -149,5 +152,23 @@ void Library::print(){ //might want to make this look better and make the decima
     cout << "Format: " << it->format << endl;
     cout << "Price: $" << it->price << endl;
     cout << "Year: " << it->year << endl; 
+  }
+}
+
+void Library::remove(string title){ //for loop? might want to change it or mention it in the design decisions
+  //declares an iterator variable to travel through
+  //the list and also sets it to start from the beginning
+  list<movie>::iterator it = collection.begin();
+  while (it != collection.end()){
+    //this if statement checks for a title match and then deletes the node
+    //if a match is found
+    if (it->title == title){
+      collection.erase(it++); //why does the ++ need to be here? without it the code breaks
+    }
+    //this else increases the iterator value to check the next node
+    //if no match is found. 
+    else{
+      it++;
+    }
   }
 }

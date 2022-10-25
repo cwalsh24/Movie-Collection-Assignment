@@ -28,7 +28,7 @@ class Library{
   void director_search(std::string name);
   //void insert_sorted(std::string title, std::string director, int runtime, std::string format, float price, int year);
   void print();
-  //void remove(std::title);
+  void remove(std::string title);
 };
 
 #endif //LIBRARY_H
