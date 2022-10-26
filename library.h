@@ -28,6 +28,14 @@ class Library{
  * 
  */
   Library();
+
+/**
+ * This is the destructor for the Library class
+ *
+ * @pre There needs to be a Library object declared in main
+ * @post the Library object has been deleted and the movie collection list is empty
+ * 
+ */
   ~Library();
   void read_from_file(std::string fileName);
   void push_front(std::string title, std::string director, int runtime, std::string format, float price, int year);

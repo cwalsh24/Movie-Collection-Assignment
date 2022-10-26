@@ -43,15 +43,7 @@ void Library::read_from_file(string fileName){
     getline(in, temp4);
     in >> temp5 >> temp6;
     in.ignore(); 
-
-    //tempM.title = temp1;
-    //tempM.director = temp2;
-    //tempM.runtime = temp3;
-    //tempM.format = temp4;
-    //tempM.price = temp5;
-    //tempM.year = temp6;
     insert_sorted(temp1, temp2, temp3, temp4, temp5, temp6);
-    //collection.push_back(tempM); //remove later
     getline(in, temp1);
   }
 
