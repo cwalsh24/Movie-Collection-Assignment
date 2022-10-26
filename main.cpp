@@ -15,7 +15,7 @@ using namespace std;
 int main()
 {
   Library l;
-  /**string choice;
+  string choice;
   cout << "Welcome to the Movie Collection Library!  You may select one of the following options: " << endl;
   cout << "1 Read a list of movies from a file" << endl;
   cout << "2 Write your collection to a file" << endl;
@@ -52,19 +52,55 @@ int main()
     }
 
     else if(choice == "4"){
+      string title;
+      cout << "Enter the title of a movie: ";
+      cin >> title;
+      l.find_movie(title);
+    }
+
+    else if (choice == "5"){
       string name;
-      cout << "Enter the name of a movie: ";
-      cin >> name;
-      l.find_movie(name);
+      cout << "Enter the name of a director: ";
+      getline(cin, name);
+      l.director_search(name);
+    }
+
+    else if (choice == "6"){
+      string title, director, format;
+      int runtime, year;
+      float price;
+      cout << "Enter the title of the movie: ";
+      getline(cin, title);
+      cin.get();
+      cout << "Enter the director of the movie: ";
+      getline(cin, director);
+      cin.get();
+      cout << "Enter the format of the movie: ";
+      getline(cin, format);
+      cout << "Enter the runtime of the movie: ";
+      cin >> runtime;
+      cout << "Enter the year of the movie: ";
+      cin >> year;
+      cout << "Enter the price of the movie: ";
+      cin >> price;
+      l.insert_sorted(title, director, runtime, format, price, year);
+    }
+
+    else if (choice == "7"){
+      string title;
+      cout << "Enter the title of a movie: ";
+      cin.get();
+      getline(cin, title);
+      l.remove(title);
     }
 
     cout << endl;
     cout << "Enter another command: ";
     cin >> choice;
   }
-  **/ 
-  l.read_from_file("collection.txt");
-  l.print();
+   
+  //l.read_from_file("collection.txt");
+  //l.print();
   //l.write_to_file("test.txt");
   //l.push_back("Something", "Something", 100, "DVD", 10.50, 2004); 
   //l.print();
