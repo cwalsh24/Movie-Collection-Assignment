@@ -43,14 +43,14 @@ void Library::read_from_file(string fileName){
     in >> temp5 >> temp6;
     in.ignore(); 
 
-    tempM.title = temp1;
-    tempM.director = temp2;
-    tempM.runtime = temp3;
-    tempM.format = temp4;
-    tempM.price = temp5;
-    tempM.year = temp6;
-    //insert_sorted(temp1, temp2, temp3);
-    collection.push_back(tempM); //remove later
+    //tempM.title = temp1;
+    //tempM.director = temp2;
+    //tempM.runtime = temp3;
+    //tempM.format = temp4;
+    //tempM.price = temp5;
+    //tempM.year = temp6;
+    insert_sorted(temp1, temp2, temp3, temp4, temp5, temp6);
+    //collection.push_back(tempM); //remove later
     getline(in, temp1);
   }
 
@@ -103,6 +103,33 @@ void Library::write_to_file(string fileName){
   cout << "Output has been written to " << fileName << endl;
 }
 
+void Library::insert_sorted(string title, string director, int runtime, string format, float price, int year){
+  movie tempM;
+  list<movie>::iterator it = collection.begin();
+  //this code stores all the movie information into the movie struct
+  tempM.title = title;
+  tempM.director = director;
+  tempM.runtime = runtime;
+  tempM.format = format;
+  tempM.price = price;
+  tempM.year = year;
+
+  //if the list is empty, the movie struct is inserted onto the front
+  if(collection.empty()){
+    collection.insert(it, tempM); //(position, item)
+    return;
+  }
+
+  //This iterates through the list and checks to see if the title comes before
+  //the next movie title alphabetically
+  while(it != collection.end() && (it->title < tempM.title)){
+    it++;
+  }
+  //this inserts the movie struct
+  collection.insert(it, tempM);
+
+} 
+
 void Library::find_movie(string movieName){ 
   //declares an iterator variable to travel through the list
   list<movie>::iterator it = collection.begin();
@@ -110,7 +137,7 @@ void Library::find_movie(string movieName){
   for(it = collection.begin(); it != collection.end(); it++){
     //this if statement checks to see if the user inputted string
     //is a substring of the movie title. 
-    if (it->title.find(movieName) != string::npos){
+    if(it->title.find(movieName) != string::npos){
       //this code prints the movie information. 
       cout << "Title: " << it->title << endl;
       cout << "Director: " << it->director << endl;
@@ -159,7 +186,7 @@ void Library::remove(string title){ //for loop? might want to change it or menti
   //declares an iterator variable to travel through
   //the list and also sets it to start from the beginning
   list<movie>::iterator it = collection.begin();
-  while (it != collection.end()){
+  while(it != collection.end()){
     //this if statement checks for a title match and then deletes the node
     //if a match is found
     if (it->title == title){

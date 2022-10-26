@@ -26,7 +26,7 @@ class Library{
   void write_to_file(std::string fileName);
   void find_movie(std::string title);
   void director_search(std::string name);
-  //void insert_sorted(std::string title, std::string director, int runtime, std::string format, float price, int year);
+  void insert_sorted(std::string title, std::string director, int runtime, std::string format, float price, int year);
   void print();
   void remove(std::string title);
 };
