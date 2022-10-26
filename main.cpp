@@ -14,8 +14,10 @@ using namespace std;
 
 int main()
 {
+  //this creates the Library object
   Library l;
   string choice;
+  //the following list displays the options the user has
   cout << "Welcome to the Movie Collection Library!  You may select one of the following options: " << endl;
   cout << "1 Read a list of movies from a file" << endl;
   cout << "2 Write your collection to a file" << endl;
@@ -30,7 +32,7 @@ int main()
   
   while(choice != "8"){
     cout << endl;
-    //The following code allows the user to call the read_from_file method.
+    //this code allows the user to call the read_from_file method by typing "1"
     if(choice == "1"){
       string readFile; 
       cout << "Please enter the name of the file: ";
@@ -39,42 +41,47 @@ int main()
       l.read_from_file(readFile);
     }
     
+    //this calls the write_to_file method when the user types "2"
     else if(choice == "2"){
       string writeFile; 
       cout << "Please name the file you want to write to (remember to put .txt): ";
       cin >> writeFile;
       l.write_to_file(writeFile);
     }
-
+    
+    //this calls the print method when the user types "3" 
     else if(choice == "3"){
       cout << "Printing..." << endl << endl;
       l.print();
     }
-
+    
+    //this calls the find_movie method when the user types "4" 
     else if(choice == "4"){
       string title;
       cout << "Enter the title of a movie: ";
-      cin >> title;
+      cin >> title; //this might want to be a getline, test it out
       l.find_movie(title);
     }
-
+    
+    //this calls the director_search method when the user types "5" 
     else if (choice == "5"){
       string name;
       cout << "Enter the name of a director: ";
+      cin.ignore(); 
       getline(cin, name);
       l.director_search(name);
     }
-
+    
+    //this allows the user to add a new movie when they type "6" 
     else if (choice == "6"){
       string title, director, format;
       int runtime, year;
       float price;
       cout << "Enter the title of the movie: ";
+      cin.ignore(); 
       getline(cin, title);
-      cin.get();
       cout << "Enter the director of the movie: ";
       getline(cin, director);
-      cin.get();
       cout << "Enter the format of the movie: ";
       getline(cin, format);
       cout << "Enter the runtime of the movie: ";
@@ -86,10 +93,12 @@ int main()
       l.insert_sorted(title, director, runtime, format, price, year);
     }
 
+    //this code allows the user to call the remove method on a movie
+    //when they type "7" 
     else if (choice == "7"){
       string title;
       cout << "Enter the title of a movie: ";
-      cin.get();
+      cin.ignore();
       getline(cin, title);
       l.remove(title);
     }
