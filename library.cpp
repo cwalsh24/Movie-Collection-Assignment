@@ -14,7 +14,8 @@
 using namespace std;
 
 Library::Library(){
-
+  //initializes the movie list
+  list<movie> collection {};
 }
 
 Library::~Library() {

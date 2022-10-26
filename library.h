@@ -18,6 +18,15 @@ class Library{
  private: 
   std::list<movie> collection;
  public:
+  
+
+/**
+ * Default constructor for the Library class
+ *
+ * @pre A Library object must be declared in the main
+ * @post A Library object has been created, its list is initialized to be empty
+ * 
+ */
   Library();
   ~Library();
   void read_from_file(std::string fileName);
