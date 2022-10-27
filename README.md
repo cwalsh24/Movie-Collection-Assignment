@@ -18,10 +18,12 @@ This program is designed to allow the user to import and manage a collection of 
 * Our main menu is designed to loop indefinitely until the user types the number "8" to exit the program. This looping is accomplished by using a while loop to prompt the user for commands and call methods that those commands are assigned to using a series of else if statements.  
 
 ## Challenges
-*
+* Using getline without cin.ignore() caused the program to output incorrectly when the main was run on certain methods, but we were able to get this fixed by putting cin.ignore() in the proper locations.
+* Trying to get the find_movie method working was difficult due to the substring requirement. We were able to figure out how to check if a string is a substring of another string after doing C++ research on the internet. This allowed the method to be completed properly.
+* Simply trying to use the standard list included in C++ rather than our own list is a challenge in itself due to not knowing what methods are included in the standard list. We had to do quite a bit of reading on cplusplus.com about the methods included with the standard list and what they return. 
 
 ## How We Shared Work
 * We shared the work by simply getting together in the G1 lab to talk about and work on the program.
 * Connor wrote most of the code for the assignment, did in-line commentation, and brainstormed.
-* Isaac commented the methods, helped brainstorm, and refined the code and documentation for each file.
+* Isaac commented the methods, helped brainstorm, refined the code and documentation for each file and worked on the driver code.
 * We both just had to work on it when possible to get it done on time.
