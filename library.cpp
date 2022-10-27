@@ -97,7 +97,9 @@ void Library::write_to_file(string fileName){
 }
 
 void Library::insert_sorted(string title, string director, int runtime, string format, float price, int year){
+  //temporary movie struct variable
   movie tempM;
+  //iterator variable to travel through the list
   list<movie>::iterator it = collection.begin();
   //this code stores all the movie information into the movie struct
   tempM.title = title;
@@ -109,7 +111,7 @@ void Library::insert_sorted(string title, string director, int runtime, string f
 
   //if the list is empty, the movie struct is inserted onto the front
   if(collection.empty()){
-    collection.insert(it, tempM); //(position, item)
+    collection.insert(it, tempM);
     return;
   }
 
@@ -149,7 +151,7 @@ void Library::director_search(string name){
   for(it = collection.begin(); it != collection.end(); it++){
     //this if statement checks to see if the user inputted name is equal
     //to the director name in each movie struct 
-    if (it->director == name){
+    if(it->director == name){
       //the following lines print the movie information
       cout << "Title: " << it->title << endl;
       cout << "Director: " << it->director << endl;
@@ -175,15 +177,15 @@ void Library::print(){
   }
 }
 
-void Library::remove(string title){ //for loop? might want to change it or mention it in the design decisions
+void Library::remove(string title){
   //declares an iterator variable to travel through
   //the list and also sets it to start from the beginning
   list<movie>::iterator it = collection.begin();
   while(it != collection.end()){
     //this if statement checks for a title match and then deletes the node
     //if a match is found
-    if (it->title == title){
-      collection.erase(it++); //why does the ++ need to be here? without it the code breaks
+    if(it->title == title){
+      collection.erase(it++); 
     }
     //this else increases the iterator value to check the next node
     //if no match is found. 

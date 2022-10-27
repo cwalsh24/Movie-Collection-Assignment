@@ -4,7 +4,8 @@
  * @date 2022-10-25
  * @brief driver code for the program
  * 
- * This program allows the user to import and manage a collection of movies using the library class and its implementation.
+ * This program allows the user to import and manage a collection of 
+ * movies using the library class and its implementation.
  */
 
 #include <iostream>
@@ -62,7 +63,8 @@ int main(){
     else if(choice == "4"){
       string title;
       cout << "Enter the title of a movie: ";
-      cin >> title; //this might want to be a getline, test it out
+      cin.ignore();
+      getline(cin, title);
       l.find_movie(title);
     }
     
@@ -110,16 +112,6 @@ int main(){
     cout << "Enter another command: ";
     cin >> choice;
   }
-   
-  //l.read_from_file("collection.txt");
-  //l.print();
-  //l.write_to_file("test.txt");
-  //l.push_back("Something", "Something", 100, "DVD", 10.50, 2004); 
-  //l.print();
-  //l.find_movie("Star");
-  //l.director_search("George Lucas");
-  //l.remove("The Terminator");
-  //l.print();  
 
   return 0;
 }

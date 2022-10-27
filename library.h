@@ -63,7 +63,7 @@ class Library{
  * @param int runtime the runtime of the movie
  * @param std::string format the format of the movie
  * @param float price the price of the movie
- * @param int year the year of release fo rthe movie
+ * @param int year the year of release for the movie
  * @return void a new entry is added to the library
  * @post the entry contains the approprite information and is at the front of the library
  * 
