@@ -1,4 +1,4 @@
-# Connor Walsh
+# Connor Walsh, Isaac Copeland (Code4Days)
 # Makefile for the Movie Collection linked list assignment
 # Date: 10/19/2022
 # The purpose of this file is to compile the library code

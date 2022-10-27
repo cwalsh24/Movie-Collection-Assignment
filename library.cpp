@@ -1,10 +1,10 @@
 /**
  * @file library.cpp
- * @author Connor Walsh
+ * @author Connor Walsh, Isaac Copeland (Code4Days)
  * @date 2022-10-20
- * @brief Stuff
+ * @brief implementation of library
  * 
- * Stuff
+ * This file contains the implementation of the methods for the library class.
  */
 
 #include <iostream>
@@ -128,7 +128,7 @@ void Library::find_movie(string movieName){
   list<movie>::iterator it = collection.begin();
   //this for loop travels through each node of the list
   for(it = collection.begin(); it != collection.end(); it++){
-    //this if statement checks to see if the user inputted string
+    //this if statement checks to see if the user input string
     //is a substring of the movie title. 
     if(it->title.find(movieName) != string::npos){
       //this code prints the movie information. 
@@ -161,7 +161,7 @@ void Library::director_search(string name){
   }
 }
 
-void Library::print(){ //might want to make this look better and make the decimals not disappear
+void Library::print(){
   //declares an iterator variable to travel through the list
   list<movie>::iterator it;
   //this loop iterates through the list and prints the movie struct information

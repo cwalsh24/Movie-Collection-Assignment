@@ -1,19 +1,19 @@
 /**
  * @file main.cpp
- * @author Connor Walsh
+ * @author Connor Walsh, Isaac Copeland (Code4Days)
  * @date 2022-10-25
- * @brief stuff
+ * @brief driver code for the program
  * 
- * stuff
+ * This program allows the user to import and manage a collection of movies using the library class and its implementation.
  */
 
 #include <iostream>
+#include <iomanip>
 #include "library.h"
 
 using namespace std;
 
-int main()
-{
+int main(){
   //this creates the Library object
   Library l;
   string choice;
@@ -29,6 +29,9 @@ int main()
   cout << "8 Exit this program" << endl << endl;
   cout << "Please enter your choice now: ";
   cin >> choice;
+  
+  //format the output of floats as currency
+  cout << fixed << setprecision(2);
   
   while(choice != "8"){
     cout << endl;
