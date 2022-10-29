@@ -65,6 +65,7 @@ int main(){
       cout << "Enter the title of a movie: ";
       cin.ignore();
       getline(cin, title);
+      cout << endl;
       l.find_movie(title);
     }
     
@@ -74,6 +75,7 @@ int main(){
       cout << "Enter the name of a director: ";
       cin.ignore(); 
       getline(cin, name);
+      cout << endl;
       l.director_search(name);
     }
     

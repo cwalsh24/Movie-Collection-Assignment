@@ -14,8 +14,7 @@
 using namespace std;
 
 Library::Library(){
-  //initializes the movie list
-  list<movie> collection {};
+  //since we have nothing to initialize, this is empty
 }
 
 Library::~Library() {
@@ -134,12 +133,12 @@ void Library::find_movie(string movieName){
     //is a substring of the movie title. 
     if(it->title.find(movieName) != string::npos){
       //this code prints the movie information. 
-      cout << "Title: " << it->title << endl;
-      cout << "Director: " << it->director << endl;
-      cout << "Runtime: " << it->runtime << " minutes" << endl;
-      cout << "Format: " << it->format << endl;
-      cout << "Price: $" << it->price << endl;
-      cout << "Year: " << it->year << endl;
+      cout << "  Title: " << it->title << endl;
+      cout << "  Director: " << it->director << endl;
+      cout << "  Runtime: " << it->runtime << " minutes" << endl;
+      cout << "  Format: " << it->format << endl;
+      cout << "  Price: $" << it->price << endl;
+      cout << "  Year: " << it->year << endl << endl;
     }
   }
 }
@@ -153,12 +152,12 @@ void Library::director_search(string name){
     //to the director name in each movie struct 
     if(it->director == name){
       //the following lines print the movie information
-      cout << "Title: " << it->title << endl;
-      cout << "Director: " << it->director << endl;
-      cout << "Runtime: " << it->runtime << " minutes" << endl;
-      cout << "Format: " << it->format << endl;
-      cout << "Price: $" << it->price << endl;
-      cout << "Year: " << it->year << endl;
+      cout << "  Title: " << it->title << endl;
+      cout << "  Director: " << it->director << endl;
+      cout << "  Runtime: " << it->runtime << " minutes" << endl;
+      cout << "  Format: " << it->format << endl;
+      cout << "  Price: $" << it->price << endl;
+      cout << "  Year: " << it->year << endl << endl;
     }
   }
 }
@@ -168,12 +167,12 @@ void Library::print(){
   list<movie>::iterator it;
   //this loop iterates through the list and prints the movie struct information
   for(it = collection.begin(); it != collection.end(); it++){
-    cout << "Title: " << it->title << endl;
-    cout << "Director: " << it->director << endl;
-    cout << "Runtime: " << it->runtime << " minutes" << endl;
-    cout << "Format: " << it->format << endl;
-    cout << "Price: $" << it->price << endl;
-    cout << "Year: " << it->year << endl; 
+    cout << "  Title: " << it->title << endl;
+    cout << "  Director: " << it->director << endl;
+    cout << "  Runtime: " << it->runtime << " minutes" << endl;
+    cout << "  Format: " << it->format << endl;
+    cout << "  Price: $" << it->price << endl;
+    cout << "  Year: " << it->year << endl << endl; 
   }
 }
 
