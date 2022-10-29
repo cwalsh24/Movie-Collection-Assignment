@@ -62,7 +62,7 @@ int main(){
     //this calls the find_movie method when the user types "4" 
     else if(choice == "4"){
       string title;
-      cout << "Enter the title of a movie: ";
+      cout << "Enter the title of a movie or part of a title: ";
       cin.ignore();
       getline(cin, title);
       cout << endl;
@@ -72,7 +72,7 @@ int main(){
     //this calls the director_search method when the user types "5" 
     else if (choice == "5"){
       string name;
-      cout << "Enter the name of a director: ";
+      cout << "Enter the full name of a director: ";
       cin.ignore(); 
       getline(cin, name);
       cout << endl;
@@ -84,7 +84,7 @@ int main(){
       string title, director, format;
       int runtime, year;
       float price;
-      cout << "Enter the title of the movie: ";
+      cout << "Enter the title of the movie you want to add: ";
       cin.ignore(); 
       getline(cin, title);
       cout << "Enter the director of the movie: ";
@@ -104,7 +104,7 @@ int main(){
     //when they type "7" 
     else if (choice == "7"){
       string title;
-      cout << "Enter the title of a movie: ";
+      cout << "Enter the title of the movie you want to remove: ";
       cin.ignore();
       getline(cin, title);
       l.remove(title);
