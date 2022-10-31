@@ -22,3 +22,9 @@ George Lucas
 DVD
 3.50
 2002
+Aliens
+James Cameron
+137
+VHS
+5.00
+1986
