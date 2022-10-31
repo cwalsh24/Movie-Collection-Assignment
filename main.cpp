@@ -41,7 +41,8 @@ int main(){
       string readFile; 
       cout << "Please enter the name of the file: ";
       cin >> readFile;
-      cout << "Movie list has been read in." << endl;
+      cout << endl; 
+      cout << "Movie list has been read in." << endl << endl;
       l.read_from_file(readFile);
     }
     
@@ -50,6 +51,7 @@ int main(){
       string writeFile; 
       cout << "Please name the file you want to write to (remember to put .txt): ";
       cin >> writeFile;
+      cout << endl;
       l.write_to_file(writeFile);
     }
     
@@ -98,6 +100,7 @@ int main(){
       cout << "Enter the price of the movie: ";
       cin >> price;
       l.insert_sorted(title, director, runtime, format, price, year);
+      cout << endl << "Adding..." << endl << endl;
     }
 
     //this code allows the user to call the remove method on a movie
@@ -108,9 +111,10 @@ int main(){
       cin.ignore();
       getline(cin, title);
       l.remove(title);
+      cout << endl;
+      cout << "Removing..." << endl << endl;
     }
 
-    cout << endl;
     cout << "Enter another command: ";
     cin >> choice;
   }

@@ -92,7 +92,7 @@ void Library::write_to_file(string fileName){
   //closes file stream
   out.close();
   //gives the user a message showing that the file has been written
-  cout << "Output has been written to " << fileName << endl;
+  cout << "Output has been written to " << fileName << endl << endl;
 }
 
 void Library::insert_sorted(string title, string director, int runtime, string format, float price, int year){
